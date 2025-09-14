@@ -1,0 +1,63 @@
+{% include "headandnav.html" %}
+
+            <div class="mainContent">
+
+                {% if indexed_chords %}
+
+                <h1>Predicted Chords</h1>
+                <hr>
+                <div class="transcription_layout">
+                    <p>
+                    <h4>Song Information</h4>
+                    Filename: <i>{{ filename }}</i><br>
+                    Transcription method: {{ model.upper() }}, {{ bpm }} BPM<br>
+                    Measures in song: {{ indexed_chords|length }}<br>
+                    Estimated key centre: {{ estimated_key }}
+                    </p>
+                    <p>
+                    Double click on a chord to edit. You can save the results
+                    as plain text or as MusicXML, which is compatible with 
+                    programs like Musescore and Sibelius.
+                    </p>
+
+                    <audio class="song_audio" id="song_audio" controls>
+                        <source src="{{ url_for('uploads', filename=filename) }}" type="audio/ogg">
+                        <source src="{{ url_for('uploads', filename=filename) }}" type="audio/mpeg">
+                        <source src="{{ url_for('uploads', filename=filename) }}" type="audio/wav">
+                        Your browser does not support the audio tag.
+                    </audio>
+                    <p>
+                        <table class="chords_table editable" id="chords_table">
+                            <tbody>
+                                {% for idx, chord in indexed_chords %}
+                                {% if loop.index0 is divisibleby(4) %}
+                                <tr>
+                                    {% endif %}
+
+                                    <td id="cell{{ idx }}">{{ chord[0] }}</td>
+
+                                    {% if (loop.index0 + 1) is divisibleby(4) %}
+                                </tr>
+                                {% endif %}
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </p>
+                    <button class="saveButton" onclick="downloadChords()">Save as Text</button>
+                    <button class="saveButton" onclick="buildXml()">Save as XML</button>
+
+                </div>
+
+                <script>
+                    const bpm = {{ bpm | tojson }}
+                </script>
+                <script src="{{ url_for('static', filename='js/highlightChords.js') }}"></script>
+                <script src="{{ url_for('static', filename='js/editChords.js') }}"></script>
+                <script src="{{ url_for('static', filename='js/downloadChords.js') }}"></script>
+                <script src="{{ url_for('static', filename='js/downloadXml.js') }}"></script>
+
+                {% endif %}
+            </div>
+        </div>
+    </body>
+</html>

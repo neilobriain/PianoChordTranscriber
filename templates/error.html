@@ -1,0 +1,11 @@
+{% include "headandnav.html" %}
+
+            <div class="centreContent">
+                <h1>{{ error_heading }}</h1>
+                <p>{{ error_message }}<br>
+                <a href="/"><button>Back</button></a></p>
+                <img src="{{ url_for('static', filename='broken_piano.jpg') }}" alt="">
+            </div>
+        </div>
+    </body>
+</html>

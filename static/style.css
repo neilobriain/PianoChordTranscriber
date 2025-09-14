@@ -1,0 +1,116 @@
+.container {
+    max-width: 800px;
+    width: 90%;
+    margin: 10px auto;
+    border: thin solid grey;
+    border-radius: 12px;
+}
+
+.topheader {
+    display: flex;
+    background-color: #E6E6E6;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 10px;
+    background-image: url('music_notes.jpg');
+    background-size: cover;
+    border-radius: 12px;
+}
+
+.topheader h1 {
+    align-self: center;
+    margin-left: 20px;
+    background: rgba(0,0,0,0.4);
+    backdrop-filter: blur(6px);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 12px;
+    text-align: center;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    background-color: rgb(93, 173, 236);
+    align-items: center;
+    border-radius: 12px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 50px;
+    font-size: 1.4em;
+    text-align: center;
+    padding: 10px 0px;
+    flex: 1; /* Property is used for achieving equal width. */
+    border-radius: 12px;
+}
+
+nav a:hover {
+    background-color: #6C757D;
+}
+
+.mainContent,
+.boldtext {
+    padding: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.centreContent {
+    padding: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+.chords_table {
+    width: fit-content;
+    align-self: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.chords_table td:hover {
+    background-color: #E6E6E6;
+}
+
+.chords_table td.highlight {
+    background-color: rgb(93, 173, 236);
+    color: white;
+    transition: background-color 0.2s ease;
+}
+
+.trButton:hover,
+.saveButton:hover {
+    background-color: rgb(93, 173, 236);
+}
+
+.transcription_layout {
+    text-align: center;
+}
+
+/* Editable table */
+table.editable th,
+table.editable td {
+    padding: 20px;
+    border: 1px solid #ccc;
+}
+
+table.editable td.edit {
+    background: #fff89a;
+    color: black;
+}
+
+details summary {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px 15px;
+    margin: 15px 0;
+    background-color: whitesmoke;
+}
+
+/* Reduce size to counteract PICO framework largeness */
+html {
+    zoom: 80%;
+}

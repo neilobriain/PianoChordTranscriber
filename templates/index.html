@@ -1,0 +1,22 @@
+{% include "headandnav.html" %}
+
+            <div class="mainContent">
+                <h1>Upload an Audio File</h1>
+                <form method="post" enctype="multipart/form-data">
+                    <input type="file" id="fileUpload" name="audio" accept=".wav, .mp3, .ogg" required>
+                    <h4>Model Settings</h4>
+                        Transcriber:<br>
+                        <input type="radio" name="model" value="fft" checked>Fast Fourier Transform (FFT)<br>
+                        <input type="radio" name="model" value="cnn">Convolutional Neural Network (CNN)<br>
+                        BPM Mode:<br>
+                        <input type="radio" id="autoBpm" onclick="autoBpmCheck()" name="auto_bpm" value="yes" checked>Auto BPM<br>
+                        <input type="radio" id="manualBpm" onclick="autoBpmCheck()" name="auto_bpm" value="no">Manual BPM (recommended if known)
+                        <input type="number" name="bpm_selection" id="bpmSelection" min="0" max="300" value="120" required disabled>
+                    <hr>
+                    <button class="trButton" id="transcribeButton" onclick="waitButton()" type="submit">Transcribe</button>
+                </form>
+            </div>
+        </div>
+    <script src="{{ url_for('static', filename='js/uploadForm.js') }}"></script>
+    </body>
+</html>

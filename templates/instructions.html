@@ -1,0 +1,81 @@
+{% include "headandnav.html" %}
+
+            <div class="mainContent">
+                <h1>Instructions</h1>
+                <p>
+                    <i>CSC7057: Individual Software Development Project.</i><br>
+                    Automatic Chord Transcriber by Neil Ó Briain.<br>
+                </p>
+                <p>
+                    This system will automatically transcribe chords from an uploaded
+                    audio file. The recording should be of a single isolated instrument in order to work correctly.
+                    Instructions below will explain how to use each aspect of the system to get the
+                    best out of the available transcription options. Chord results can be modified and saved
+                    as required.
+                </p>
+                <hr>
+                <h4>File Upload Settings</h4>
+                <p>
+                File types: WAV, MP3, or Ogg Vorbis.
+                </p>
+                <h5>Choosing a transciber:</h5>
+                <details>
+                    <summary>Fast Fourier Transform (FFT)</summary>
+                    <p>Signal processing-based method.<br>
+                    Chord types: Major, Minor, Suspended (2nd and 4th), Diminished, Augmented.<br>
+                    Faster than CNN, more susceptible to noise.<br>
+                    No instrument-specific preference.<br>
+                    Evaluation: 88.45% accuracy against full audioPianoTriad dataset.</p>
+                </details>
+                <details>
+                    <summary>Convolutional Neural Network (CNN)</summary>
+                    <p>Deep learning-based AI model.<br>
+                    Chord types: Major, Minor.<br>
+                    Slower than FFT, less susceptible to noise.<br>
+                    Trained on piano chord data.<br>
+                    Evaluation: 99.45% accuracy on test set from audioPianoTriad dataset (Maj and Min chords).</p>
+                </details>
+                <h5>Choosing auto / manual BPM:</h5>
+                <p>
+                Beats Per Minute (BPM) is used to split the track into chord blocks for transcription. If you know the
+                BPM of the track, you should set this manually. Otherwise, select the automatic prediction box.
+                </p>
+                <hr>
+                <h4>Transcription Page Settings</h4>
+                <p>
+                    Once the file has been transcribed, you will be able to review and refine chord predictions before saving.
+                </p>
+                <p>
+                    Use the audio player above the chord listing to play the file. Predicted chords are time-aligned and highlighted
+                    as the song plays. Any chords can be edited by double clicking on
+                    their chord box. The box colour will change to yellow and allow you to edit the chord name. Press
+                    esc to cancel the edit, or press enter to confirm it.
+                </p>
+                <h5>Choosing a Save Format:</h5>
+                <details>
+                    <summary>Save as Plain Text (.txt)</summary>
+                    <p>
+                        Saves the chords as plain text which can be opened in programs like Notepad.<br><br>
+                        Use this if you want a simple text file of chord names similar to the interface, which can
+                        be easily viewed or printed as required.<br><br>
+                        All information in the chord boxes is saved as-is.
+                    </p>
+                </details>
+                <details>
+                    <summary>Save as MusicXML (.xml)</summary>
+                    <p>
+                        Saves the chords in MusicXML format which can be opened in programs like Musescore and Sibelius.<br><br>
+                        Use this if you want to work in other music software with sheet music. The chord names are converted to their
+                        relevant triads and placed on the treble clef with voice-leading automatically implemented.<br><br>
+                        Only chords named using the correct format will be saved, so bare this in mind if editing chords in the interface before saving.
+                        Otherwise an empty measure will be listed in the score for that bar.<br><br>
+                        Naming format: Note name + chord type (no spaces)<br>
+                        Valid note name format: C, D#, Gb etc.<br>
+                        Valid chord type format: maj, min, sus2, sus4, dim, aug.<br>
+                        Example valid chords: Cmaj, Ebaug, Bsus4, C#dim etc.
+                    </p>
+                </details>
+            </div>
+        </div>
+    </body>
+</html>
