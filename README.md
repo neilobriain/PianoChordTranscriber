@@ -8,6 +8,8 @@ This project is a Flask-powered web application designed for musicians, producer
 
 Once transcribed, the chords can be edited directly in the user-friendly interface and exported as either a simple text `.txt` file or a MusicXML `.xml` file, which can be imported into most music notation software.
 
+<img width="487" height="499" alt="UI transcription play and edit" src="https://github.com/user-attachments/assets/4c5416c8-92f8-40a5-9665-c0da87c332f8" />
+
 ## Features
 
 * **Web-Based Interface:** Easy-to-use interface built with Flask.
@@ -75,4 +77,5 @@ You will need Python 3.10.11 and pip installed on your system.
 4.  Choose between automatic BPM detection or manually entering a known BPM.
 5.  Click the "Transcribe" button and wait for the process to complete.
 6.  On the results page, you can play the audio, see the highlighted chords in real-time, and double-click any chord to make edits.
+
 7.  Click "Save as Text" or "Save as XML" to download your chord chart.
