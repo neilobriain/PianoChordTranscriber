@@ -4,7 +4,7 @@ A web-based application that automatically transcribes chords from an audio file
 
 ## Description
 
-This project is a Flask-powered web application designed for musicians, producers, and hobbyists who want to quickly determine the chord progression of a piece of music. Users can upload an audio file, and the application will analyse it to produce a bar-by-bar chord chart. The system offers two distinct transcription methods: a fast, traditional Fast Fourier Transform (FFT) approach and a Convolutional Neural Network (CNN) model trained specifically on piano chords for higher accuracy on that instrument.
+This project is a Flask-powered web application designed for musicians, producers, and hobbyists who want to quickly determine the chord progression of a piece of music. Users can upload an audio file, and the application will analyse it to produce a bar-by-bar chord chart. The system offers two distinct transcription methods: a fast, traditional Fast Fourier Transform (FFT) approach (88.45% accuracy against dataset) and a Convolutional Neural Network (CNN) model trained specifically on piano chords for higher accuracy on that instrument (99.45% accuracy on test set).
 
 Once transcribed, the chords can be edited directly in the user-friendly interface and exported as either a simple text `.txt` file or a MusicXML `.xml` file, which can be imported into most music notation software.
 
@@ -79,3 +79,4 @@ You will need Python 3.10.11 and pip installed on your system.
 6.  On the results page, you can play the audio, see the highlighted chords in real-time, and double-click any chord to make edits.
 
 7.  Click "Save as Text" or "Save as XML" to download your chord chart.
+
